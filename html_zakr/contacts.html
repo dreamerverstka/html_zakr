@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mega Framework Showcase</title>
+
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.3/dist/css/uikit.min.css" />
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Rubik', sans-serif; scroll-behavior: smooth; }
+    .uk-navbar-container { background: #121212; }
+    .hero { background: linear-gradient(135deg,#2a2a2a,#4f46e5); color: #fff; }
+    .uk-card-primary { border: none; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+    .uk-footer { background: #111; color: #888; }
+    .uk-footer a { color: #fff; }
+    .counter { font-size: 2.5rem; font-weight: 700; color: #4f46e5; }
+  </style>
+</head>
+<body>
+
+  <!-- Offcanvas Menu -->
+  <div id="offcanvas-nav" uk-offcanvas="mode: slide; overlay: true">
+    <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+      <button class="uk-offcanvas-close" type="button" uk-close></button>
+      <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+        <li class="uk-active"><a href="#">Головна</a></li>
+        <li><a href="#features">Функції</a></li>
+        <li><a href="#services">Послуги</a></li>
+        <li><a href="#portfolio">Портфоліо</a></li>
+        <li><a href="#pricing">Ціни</a></li>
+        <li><a href="#team">Команда</a></li>
+        <li><a href="#testimonials">Відгуки</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Контакти</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="uk-navbar-container uk-position-fixed uk-width-1-1 uk-z-index" uk-navbar>
+    <div class="uk-navbar-left uk-container">
+      <a class="uk-navbar-item uk-logo" href="#">MegaShowcase</a>
+    </div>
+    <div class="uk-navbar-right uk-container">
+      <ul class="uk-navbar-nav uk-visible@m">
+        <li><a href="#">Головна</a></li>
+        <li><a href="#features">Функції</a></li>
+        <li><a href="#services">Послуги</a></li>
+        <li><a href="#portfolio">Портфоліо</a></li>
+        <li><a href="#pricing">Ціни</a></li>
+        <li><a href="#team">Команда</a></li>
+        <li><a href="#testimonials">Відгуки</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Контакти</a></li>
+      </ul>
+      <a class="uk-navbar-toggle uk-hidden@m" uk-toggle="target: #offcanvas-nav" href="#">
+        <span uk-navbar-toggle-icon></span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Slideshow -->
+  <section class="hero uk-section uk-section-large uk-padding-remove-bottom">
+    <div uk-slideshow="autoplay: true; ratio: 16:6"> 
+      <ul class="uk-slideshow-items">
+        <li>
+          <img src="https://picsum.photos/1920/600?1" alt="" uk-cover>
+          <div class="uk-position-center uk-text-center uk-light animate__animated animate__fadeInDown">
+            <h1 class="uk-heading-primary">Повна сила UIkit</h1>
+            <p class="uk-text-lead">Слайдер, оффканвас, фільтрація, анімації без JS</p>
+            <a href="#features" class="uk-button uk-button-primary uk-button-large">Детальніше</a>
+          </div>
+        </li>
+        <li>
+          <img src="https://picsum.photos/1920/600?2" alt="" uk-cover>
+          <div class="uk-position-center uk-text-center uk-light animate__animated animate__fadeInDown">
+            <h1 class="uk-heading-primary">Модальні вікна та галерея</h1>
+            <p class="uk-text-lead">Вбудований Lightbox для будь-якого контенту</p>
+            <a href="#portfolio" class="uk-button uk-button-secondary uk-button-large">Портфоліо</a>
+          </div>
+        </li>
+      </ul>
+      <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+      <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="uk-section uk-section-default">
+    <div class="uk-container">
+      <h2 class="uk-heading-line uk-text-center"><span>Наші Функції</span></h2>
+      <div class="uk-child-width-1-3@m uk-grid-match uk-grid-small" uk-grid uk-scrollspy="target: > div; cls: animate__animated animate__zoomIn; delay: 150">
+        <div>
+          <div class="uk-card uk-card-default uk-card-body uk-text-center">
+            <i class="fas fa-cubes fa-2x uk-margin-small-bottom"></i>
+            <h3 class="uk-card-title">Компоненти UIkit</h3>
+            <p>Найбільший набір готових елементів — від модалок до табів.</p>
+          </div>
+        </div>
+        <div>
+          <div class="uk-card uk-card-default uk-card-body uk-text-center">
+            <i class="fas fa-magic fa-2x uk-margin-small-bottom"></i>
+            <h3 class="uk-card-title">Animate.css</h3>
+            <p>Плавні анімації для кожного блоку при скролі без JS.</p>
+          </div>
+        </div>
+        <div>
+          <div class="uk-card uk-card-default uk-card-body uk-text-center">
+            <i class="fas fa-leaf fa-2x uk-margin-small-bottom"></i>
+            <h3 class="uk-card-title">Легкодинамічні фільтри</h3>
+            <p>Жива фільтрація портфоліо через uk-filter control.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="uk-section uk-section-muted">
+    <div class="uk-container">
+      <h2 class="uk-heading-line uk-text-center"><span>Наші Послуги</span></h2>
+      <div class="uk-child-width-1-4@m uk-grid-small uk-grid-match" uk-grid uk-scrollspy="target: > div; cls: animate__animated animate__fadeInUp; delay: 200">
+        <div>
+          <div class="uk-card uk-card-primary uk-card-body uk-text-center">
+            <i class="fas fa-laptop-code fa-2x uk-margin-small-bottom"></i>
+            <h3>Верстка</h3>
+            <p>Адаптивна верстка за 100% стандартами.</p>
+          </div>
+        </div>
+        <div>
+          <div class="uk-card uk-card-primary uk-card-body uk-text-center">
+            <i class="fas fa-mobile-alt fa-2x uk-margin-small-bottom"></i>
+            <h3>Mobile UI/UX</h3>
+            <p>Розробка інтуїтивних мобільних інтерфейсів.</p>
+          </div>
+        </div>
+        <div>
+          <div class="uk-card uk-card-primary uk-card-body uk-text-center">
+            <i class="fas fa-server fa-2x uk-margin-small-bottom"></i>
+            <h3>Back-End</h3>
+            <p>Інтеграція API та серверна логіка.</p>
+          </div>
+        </div>
+        <div>
+          <div class="uk-card uk-card-primary uk-card-body uk-text-center">
+            <i class="fas fa-search-dollar fa-2x uk-margin-small-bottom"></i>
+            <h3>SEO Оптимізація</h3>
+            <p>Швидкість, семантика та просування в Google.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Filter -->
+  <section id="portfolio" class="uk-section uk-section-default">
+    <div class="uk-container">
+      <h2 class="uk-heading-line uk-text-center"><span>Портфоліо</span></h2>
+      <ul uk-tab class="uk-flex-center uk-margin">
+        <li uk-filter-control><a href="#">Усі</a></li>
+        <li uk-filter-control="[data-cat='web']"><a href="#">Web</a></li>
+        <li uk-filter-control="[data-cat='mobile']"><a href="#">Mobile</a></li>
+        <li uk-filter-control="[data-cat='design']"><a href="#">Design</a></li>
+      </ul>
+      <ul class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid uk-filter="target: .js-card">
+        <li class="js-card" data-cat="web">
+          <div class="uk-card uk-card-default uk-card-body uk-text-center">
+            <a href="https://picsum.photos/600/400?web1" uk-lightbox>
+              <img src="https://picsum.photos/600/400?web1" alt=""></a>
+            <h4>Корпоративний сайт</h4>
+          </div>
+        </nli>
+        <li class="js-card" data-cat="mobile">
+          <div class="uk-card uk-card-default uk-card-body uk-text-center">
+            <a href="https://picsum.photos/600/400?mob1" uk-lightbox>
+              <img src="https://picsum.photos/600/400?mob1" alt=""></a>
+            <h4>Мобільний додаток</h4>
+          </div>
+        </li>
+        <li class="js-card" data-cat="design">
+          <div class="uk-card uk-card-default uk-card-body uk-text-center">
+            <a href="https://picsum.photos/600/400?design1" uk-lightbox>
+              <img src="https://picsum.photos/600/400?design1" alt=""></a>
+            <h4>UI/UX Макет</h4>
+          </div>
+        </li>
+        <!-- додай більше карток за потребою -->
+      </ul>
+    </div>
+  </section>
+
+  <!-- Pricing Table -->
+  <section id="pricing" class="uk-section uk-section-muted">
+    <div class="uk-container">
+      <h2 class="uk-heading-line uk-text-center"><span>Тарифи</span></h2>
+      <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
+        <div>
+          <div class="uk-card uk-card-body uk-card-hover uk-text-center">
+            <h3>Basic</h3>
+            <p class="uk-text-large">Free</p>
+            <ul class="uk-list uk-list-divider">
+              <li><i class="fas fa-check"></i> Одна сторінка</li>
+              <li><i class="fas fa-check"></i> Email підтримка</li>
+            </ul>
+            <button class="uk-button uk-button-primary">Отримати</button>
+          </div>
+        </div>
+        <div>
+          <div class="uk-card uk-card-body uk-card-primary uk-text-center">
+            <h3 class="uk-light">Pro</h3>
+            <p class="uk-text-large uk-light">$49/mo</p>
+            <ul class="uk-list uk-light uk-list-divider">
+              <li><i class="fas fa-check"></i> 10 сторінок</li>
+              <li><i class="fas fa-check"></i> Пріоритетна підтримка</li>
+              <li><i class="fas fa-check"></i> Розширена аналітика</li>
+            </ul>
+            <button class="uk-button uk-button-secondary">Замовити</button>
+          </div>
+        </div>
+        <div>
+          <div class="uk-card uk-card-body uk-card-hover uk-text-center">
+            <h3>Enterprise</h3>
+            <p class="uk-text-large">On Request</p>
+            <ul class="uk-list uk-list-divider">
+              <li><i class="fas fa-check"></i> Безліміт ресурсів</li>
+              <li><i class="fas fa-check"></i> Персональний менеджер</li>
+              <li><i class="fas fa-check"></i> SLA гарантії</li>
+            </ul>
+            <button class="uk-button uk-button-primary">Запитати</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="uk-section uk-section-default">
+    <div class="uk-container">
+      <h2 class="uk-heading-line uk-text-center"><span>Наша Команда</span></h2>
+      <div class="uk-child-width-1-4@m uk-grid-small uk-grid-match" uk-grid uk-scrollspy="target: > div; cls: animate__animated animate__fadeIn; delay: 200">
+        <div>
+          <div class="uk-card uk-card-default uk-card-body uk-text-center">
+            <img class="uk-border-circle uk-margin-auto" src="https://i.pravatar.cc/150?img=1" width="100" alt="">
+            <h4>Олена</h4>
+            <p>Front-End Developer</p>
+          </div>
+        </div>
+        <div>
+          <div class="uk-card uk-card-default uk-card-body uk-text-center">
+            <img class="uk-border-circle uk-margin-auto" src="https://i.pravatar.cc/150?img=2" width="100" alt="">
+            <h4>Іван</h4>
+            <p>Back-End Developer</p>
+          </div>
+        </div>
+        <div>
+          <div class="uk-card uk-card-default uk-card-body uk-text-center">
+            <img class="uk-border-circle uk-margin-auto" src="https://i.pravatar.cc/150?img=3" width="100" alt="">
+            <h4>Оксана</h4>
+            <p>UI/UX Designer</p>
+          </div>
+        </div>
+        <div>
+          <div class="uk-card uk-card-default uk-card-body uk-text-center">
+            <img class="uk-border-circle uk-margin-auto" src="https://i.pravatar.cc/150?img=4" width="100" alt="">
+            <h4>Петро</h4>
+            <p>Project Manager</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Counters -->
+  <section class="uk-section uk-section-muted">
+    <div class="uk-container">
+      <div class="uk-child-width-1-4@m uk-text-center" uk-grid>
+        <div><div class="counter" uk-count="4;200">200</div><p>Проєктів</p></div>
+        <div><div class="counter" uk-count="2;50">50</div><p>Клієнтів</p></div>
+        <div><div class="counter" uk-count="1;100">100</div><p>% Задоволеність</p></div>
+        <div><div class="counter" uk-count="1;5">5</div><p>Років досвіду</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="uk-section uk-section-default">
+    <div class="uk-container">
+      <h2 class="uk-heading-line uk-text-center"><span>Відгуки</span></h2>
+      <div uk-slider="autoplay: true;" class="uk-position-relative uk-visible-toggle">
+        <ul class="uk-slider-items uk-grid uk-grid-match">
+          <li class="uk-width-3-4@m">
+            <div class="uk-card uk-card-body uk-card-primary uk-text-center uk-light">
+              “Неймовірно швидка розробка та підтримка!”<br><strong>— Марія, CEO</strong>
+            </div>
+          </li>
+          <li class="uk-width-3-4@m">
+            <div class="uk-card uk-card-body uk-card-default uk-text-center">
+              “Професійний підхід і крутий дизайн.”<br><strong>— Андрій, CTO</strong>
+            </div>
+          </li>
+        </ul>
+        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section id="faq" class="uk-section uk-section-muted">
+    <div class="uk-container">
+      <h2 class="uk-heading-line uk-text-center"><span>FAQ</span></h2>
+      <ul uk-accordion>
+        <li class="uk-open">
+          <a class="uk-accordion-title" href="#">Як підключити UIkit?</a>
+          <div class="uk-accordion-content">Проста вставка <code>&lt;link&gt</code> та <code>&lt;script&gt</code> — і фреймворк готовий.</div>
+        </li>
+        <li>
+          <a class="uk-accordion-title" href="#">Чи працює без JS?</a>
+          <div class="uk-accordion-content">Більшість компонентів працює на атрибутах без кастомного JS.</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section id="contact" class="uk-section uk-section-default">
+    <div class="uk-container">
+      <h2 class="uk-heading-line uk-text-center"><span>Контакти</span></h2>
+      <form class="uk-grid-small uk-child-width-1-2@s uk-form-stacked" uk-grid>
+        <div><label>Ім’я<input class="uk-input" type="text" required></label></div>
+        <div><label>Email<input class="uk-input" type="email" required></label></div>
+        <div class="uk-width-1-1"><label>Повідомлення<textarea class="uk-textarea" rows="4"></textarea></label></div>
+        <div class="uk-width-1-1 uk-text-center"><button class="uk-button uk-button-primary uk-button-large">Відправити</button></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="uk-section uk-section-xsmall uk-text-center uk-footer">  
+    <div class="uk-container">
+      <p>&copy; 2025 MegaShowcase. Усі права захищені.</p>
+      <div><a href="#"><i class="fab fa-facebook-f uk-margin-small-right"></i></a><a href="#"><i class="fab fa-twitter uk-margin-small-right"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+    </div>
+  </footer>
+
+  <!-- UIkit JS + Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.3/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.3/dist/js/uikit-icons.min.js"></script>
+</body>
+</html>
